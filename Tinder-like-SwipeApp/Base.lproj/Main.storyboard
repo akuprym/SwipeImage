@@ -16,31 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsy-C7-byd">
-                                <rect key="frame" x="69" y="161" width="273" height="355"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-QX-zU8">
+                                <rect key="frame" x="58" y="142" width="276" height="362"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="3Sl-Es-meq" appends="YES" id="bhT-fX-3C3"/>
+                                    <outletCollection property="gestureRecognizers" destination="gWT-LB-EKb" appends="YES" id="YmN-T6-pGR"/>
                                 </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="3Sl-Es-meq" appends="YES" id="l7P-dN-FF3"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="card" destination="Xsy-C7-byd" id="hsi-nL-Ii0"/>
+                        <outlet property="card" destination="KSR-QX-zU8" id="X6Q-ZZ-3Mu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="3Sl-Es-meq">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gWT-LB-EKb">
                     <connections>
-                        <action selector="panCard:" destination="BYZ-38-t0r" id="KpI-XJ-Y66"/>
+                        <action selector="panCard:" destination="BYZ-38-t0r" id="02i-lk-9fA"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
