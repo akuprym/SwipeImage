@@ -17,8 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-QX-zU8">
-                                <rect key="frame" x="58" y="142" width="276" height="362"/>
+                                <rect key="frame" x="58" y="223" width="276" height="362"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9w-Qm-2eo">
+                                        <rect key="frame" x="18" y="58" width="240" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -31,7 +37,8 @@
                         <gestureRecognizers/>
                     </view>
                     <connections>
-                        <outlet property="card" destination="KSR-QX-zU8" id="X6Q-ZZ-3Mu"/>
+                        <outlet property="card" destination="KSR-QX-zU8" id="goJ-WA-KqH"/>
+                        <outlet property="thumbImageView" destination="X9w-Qm-2eo" id="dD2-hC-8yn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,7 +48,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="57.251908396946561" y="26.760563380281692"/>
+            <point key="canvasLocation" x="-109.16030534351144" y="-17.605633802816904"/>
         </scene>
     </scenes>
     <resources>
