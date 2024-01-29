@@ -13,11 +13,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var thumbImageView: UIImageView!
     
+    @IBOutlet weak var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view = UIView()
         view.backgroundColor = .gray
         view.addSubview(card)
+        view.addSubview(resetButton)
     }
     
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
@@ -38,11 +41,37 @@ class ViewController: UIViewController {
         thumbImageView.alpha = abs(xFromCenter / view.center.x)
         
         if sender.state == UIGestureRecognizer.State.ended {
-            UIView.animate(withDuration: 0.2) {
-                card.center = self.view.center
+            
+            if card.center.x < 75 {
+                //dislike
+                UIView.animate(withDuration: 0.3) {
+                    card.center = CGPoint(x: self.view.frame.origin.x - card.frame.width/2, y: card.center.y + 75)
+                    card.alpha = 0
+                }
+                return
+            } else if card.center.x > view.frame.width - 75 {
+                //like
+                UIView.animate(withDuration: 0.3) {
+                    card.center = CGPoint(x: self.view.frame.maxX + card.frame.width/2, y: card.center.y + 75)
+                    card.alpha = 0
+                }
+                return
             }
+            resetCard()
         }
     }
     
+    @IBAction func reset(_ sender: UIButton) {
+       resetCard()
+    }
     
+    func resetCard() {
+        UIView.animate(withDuration: 0.2) {
+            self.card.center = self.view.center
+            self.thumbImageView.alpha = 0
+            self.card.alpha = 1
+        }
+    }
+
 }
+
