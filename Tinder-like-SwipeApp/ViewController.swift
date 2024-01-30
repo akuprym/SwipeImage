@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
+    var results: [Result] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view = UIView()
@@ -73,5 +75,27 @@ class ViewController: UIViewController {
         }
     }
 
+    
+    func fetchPhotos() {
+        
+        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=10&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
+
+        guard let url = URL(string: urlString) else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            
+            do {
+                let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
+                DispatchQueue.main.async {
+                    self.results = jsonResult.results
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+        
+    }
 }
 
