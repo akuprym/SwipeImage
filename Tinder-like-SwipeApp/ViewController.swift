@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var card: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var thumbImageView: UIImageView!
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
         view.backgroundColor = .gray
         view.addSubview(card)
         view.addSubview(resetButton)
+        card.addSubview(imageView)
+        fetchPhotos()
     }
     
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
@@ -78,8 +81,7 @@ class ViewController: UIViewController {
     
     func fetchPhotos() {
         
-        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=10&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
-
+        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=office&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
         guard let url = URL(string: urlString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
@@ -89,6 +91,7 @@ class ViewController: UIViewController {
                 let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
                 DispatchQueue.main.async {
                     self.results = jsonResult.results
+                    self.downloadImage()
                 }
             } catch {
                 print(error)
@@ -97,5 +100,22 @@ class ViewController: UIViewController {
         task.resume()
         
     }
+    
+    func downloadImage() {
+        let urlString = self.results.randomElement()!.urls.regular
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
+        let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+          guard error == nil,
+            let data = data,
+            let response = response as? HTTPURLResponse,
+            response.statusCode == 200 else { return }
+          guard let image = UIImage(data: data) else { return }
+          DispatchQueue.main.async {
+              self?.imageView.image = image
+          }
+        }
+        dataTask.resume()
+      }
 }
 

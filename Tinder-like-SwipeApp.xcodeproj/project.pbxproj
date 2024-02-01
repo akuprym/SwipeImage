@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		846286A12B685E530071C8DE /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846286A02B685E530071C8DE /* imageViewController.swift */; };
 		846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846286A22B6862FA0071C8DE /* APIResponse.swift */; };
 		84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA392B62F58B00A98AFD /* AppDelegate.swift */; };
 		84EBFA3C2B62F58B00A98AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA3B2B62F58B00A98AFD /* SceneDelegate.swift */; };
@@ -15,11 +14,9 @@
 		84EBFA412B62F58B00A98AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EBFA3F2B62F58B00A98AFD /* Main.storyboard */; };
 		84EBFA432B62F58E00A98AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EBFA422B62F58E00A98AFD /* Assets.xcassets */; };
 		84EBFA462B62F58E00A98AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EBFA442B62F58E00A98AFD /* LaunchScreen.storyboard */; };
-		84EBFA522B630C1E00A98AFD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA512B630C1E00A98AFD /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		846286A02B685E530071C8DE /* imageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
 		846286A22B6862FA0071C8DE /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		84EBFA362B62F58B00A98AFD /* Tinder-like-SwipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder-like-SwipeApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EBFA392B62F58B00A98AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +26,6 @@
 		84EBFA422B62F58E00A98AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EBFA452B62F58E00A98AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EBFA472B62F58E00A98AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84EBFA512B630C1E00A98AFD /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +61,8 @@
 				84EBFA392B62F58B00A98AFD /* AppDelegate.swift */,
 				84EBFA3B2B62F58B00A98AFD /* SceneDelegate.swift */,
 				84EBFA3D2B62F58B00A98AFD /* ViewController.swift */,
-				84EBFA512B630C1E00A98AFD /* ImageView.swift */,
 				846286A22B6862FA0071C8DE /* APIResponse.swift */,
 				84EBFA3F2B62F58B00A98AFD /* Main.storyboard */,
-				846286A02B685E530071C8DE /* imageViewController.swift */,
 				84EBFA422B62F58E00A98AFD /* Assets.xcassets */,
 				84EBFA442B62F58E00A98AFD /* LaunchScreen.storyboard */,
 				84EBFA472B62F58E00A98AFD /* Info.plist */,
@@ -147,10 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EBFA522B630C1E00A98AFD /* ImageView.swift in Sources */,
 				84EBFA3E2B62F58B00A98AFD /* ViewController.swift in Sources */,
 				84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */,
-				846286A12B685E530071C8DE /* imageViewController.swift in Sources */,
 				84EBFA3C2B62F58B00A98AFD /* SceneDelegate.swift in Sources */,
 				846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */,
 			);
