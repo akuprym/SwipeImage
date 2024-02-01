@@ -68,6 +68,8 @@ class ViewController: UIViewController {
     
     @IBAction func reset(_ sender: UIButton) {
        resetCard()
+        imageView.image = nil
+        downloadImage()
     }
     
     func resetCard() {
@@ -81,7 +83,7 @@ class ViewController: UIViewController {
     
     func fetchPhotos() {
         
-        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=office&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
+        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=random&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
         guard let url = URL(string: urlString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
