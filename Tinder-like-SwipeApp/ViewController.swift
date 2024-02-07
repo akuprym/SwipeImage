@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
-    var results: [Result] = []
+    var results: URLS?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,16 +83,16 @@ class ViewController: UIViewController {
     
     func fetchPhotos() {
         
-        let urlString = "https://api.unsplash.com/search/photos?page=1&per_page=50&query=random&client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
+        let urlString = "https://api.unsplash.com/photos/?client_id=FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
         guard let url = URL(string: urlString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else { return }
             
             do {
-                let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
+                let jsonResult = try JSONDecoder().decode([APIResponse].self, from: data)
                 DispatchQueue.main.async {
-                    self.results = jsonResult.results
+                    self.results = jsonResult.randomElement()?.urls
                     self.downloadImage()
                 }
             } catch {
@@ -104,8 +104,8 @@ class ViewController: UIViewController {
     }
     
     func downloadImage() {
-        let urlString = self.results.randomElement()!.urls.regular
-        guard let url = URL(string: urlString) else { return }
+        let urlString = self.results?.regular
+        guard let url = URL(string: urlString!) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
         let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
           guard error == nil,

@@ -8,13 +8,9 @@
 import Foundation
 
 struct APIResponse: Codable {
-    let total: Int
-    let total_pages: Int
-    let results: [Result]
-}
-
-struct Result: Codable {
+    
     let id: String
+//    let description: String
     let urls: URLS
 }
 
