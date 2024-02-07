@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
-    var results: URLS?
+    var results: [APIResponse] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
             do {
                 let jsonResult = try JSONDecoder().decode([APIResponse].self, from: data)
                 DispatchQueue.main.async {
-                    self.results = jsonResult.randomElement()?.urls
+                    self.results = jsonResult
                     self.downloadImage()
                 }
             } catch {
@@ -104,20 +104,23 @@ class ViewController: UIViewController {
     }
     
     func downloadImage() {
-        let urlString = self.results?.regular
-        guard let url = URL(string: urlString!) else { return }
-        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
-        let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-          guard error == nil,
-            let data = data,
-            let response = response as? HTTPURLResponse,
-            response.statusCode == 200 else { return }
-          guard let image = UIImage(data: data) else { return }
-          DispatchQueue.main.async {
-              self?.imageView.image = image
-          }
+        var randomInt = Int.random(in: 0...9)
+
+            let urlString = self.results[randomInt].urls.regular
+            guard let url = URL(string: urlString) else { return }
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
+            let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                guard error == nil,
+                      let data = data,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 else { return }
+                guard let image = UIImage(data: data) else { return }
+                DispatchQueue.main.async {
+                    self?.imageView.image = image
+                }
+            }
+            dataTask.resume()
         }
-        dataTask.resume()
-      }
+    
 }
 
