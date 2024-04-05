@@ -1,4 +1,4 @@
-App with a swiping mechanism similar to dating apps like Tinder. 
+The App with a swiping mechanism similar to dating apps like Tinder. 
 
 Users can swipe left (dislike) or swipe right (like) on images downloaded from the Unsplash API.
 
