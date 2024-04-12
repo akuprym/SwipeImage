@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843509A92BC67D33000A4F1F /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843509A82BC67D33000A4F1F /* LikedViewController.swift */; };
 		846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846286A22B6862FA0071C8DE /* APIResponse.swift */; };
+		84DD54082BC95813002C4148 /* LikedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */; };
+		84E414722BC3FD1700F7F384 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E414712BC3FD1700F7F384 /* TopNavigationStackView.swift */; };
+		84E414752BC407F700F7F384 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E414742BC407F700F7F384 /* MainTabBarController.swift */; };
 		84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA392B62F58B00A98AFD /* AppDelegate.swift */; };
 		84EBFA3C2B62F58B00A98AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA3B2B62F58B00A98AFD /* SceneDelegate.swift */; };
 		84EBFA3E2B62F58B00A98AFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA3D2B62F58B00A98AFD /* ViewController.swift */; };
@@ -17,7 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843509A82BC67D33000A4F1F /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
 		846286A22B6862FA0071C8DE /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCollectionViewCell.swift; sourceTree = "<group>"; };
+		84E414712BC3FD1700F7F384 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
+		84E414742BC407F700F7F384 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		84EBFA362B62F58B00A98AFD /* Tinder-like-SwipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder-like-SwipeApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EBFA392B62F58B00A98AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EBFA3B2B62F58B00A98AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84E414732BC3FFD900F7F384 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84E414712BC3FD1700F7F384 /* TopNavigationStackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		84EBFA2D2B62F58B00A98AFD = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +74,18 @@
 		84EBFA382B62F58B00A98AFD /* Tinder-like-SwipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				84E414732BC3FFD900F7F384 /* Views */,
 				84EBFA392B62F58B00A98AFD /* AppDelegate.swift */,
 				84EBFA3B2B62F58B00A98AFD /* SceneDelegate.swift */,
 				84EBFA3D2B62F58B00A98AFD /* ViewController.swift */,
 				846286A22B6862FA0071C8DE /* APIResponse.swift */,
+				84E414742BC407F700F7F384 /* MainTabBarController.swift */,
+				843509A82BC67D33000A4F1F /* LikedViewController.swift */,
 				84EBFA3F2B62F58B00A98AFD /* Main.storyboard */,
 				84EBFA422B62F58E00A98AFD /* Assets.xcassets */,
 				84EBFA442B62F58E00A98AFD /* LaunchScreen.storyboard */,
 				84EBFA472B62F58E00A98AFD /* Info.plist */,
+				84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */,
 			);
 			path = "Tinder-like-SwipeApp";
 			sourceTree = "<group>";
@@ -141,10 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DD54082BC95813002C4148 /* LikedCollectionViewCell.swift in Sources */,
+				843509A92BC67D33000A4F1F /* LikedViewController.swift in Sources */,
 				84EBFA3E2B62F58B00A98AFD /* ViewController.swift in Sources */,
 				84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */,
+				84E414752BC407F700F7F384 /* MainTabBarController.swift in Sources */,
 				84EBFA3C2B62F58B00A98AFD /* SceneDelegate.swift in Sources */,
 				846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */,
+				84E414722BC3FD1700F7F384 /* TopNavigationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

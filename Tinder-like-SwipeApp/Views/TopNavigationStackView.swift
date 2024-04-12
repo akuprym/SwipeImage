@@ -13,8 +13,11 @@ class TopNavigationStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        heightAnchor.constraint(equalToConstant: 60).isActive = true
-        likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        heightAnchor.constraint(equalToConstant: 60).isActive = true
+        likeButton.setImage(UIImage(systemName: "heart.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        likeButton.setTitleColor(.red, for: .normal)
+        addArrangedSubview(likeButton)
+        
     }
     
     required init(coder: NSCoder) {
