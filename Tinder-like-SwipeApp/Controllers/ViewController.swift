@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     var currentPage = 1
     var currentPhotoIndex = 0
     let treshold: CGFloat = 75
-    let photoIndexLimit = 9
+    let photoIndexLimit = 1
     
     var cardView: UIView!
     var imageView: UIImageView!
@@ -25,10 +25,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupUI()
-   
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         cardView.addGestureRecognizer(panGesture)
-
+        
         fetchPhotos()
     }
     
@@ -99,9 +99,9 @@ class ViewController: UIViewController {
     fileprivate func handleChangedState(_ gesture: UIPanGestureRecognizer) {
         
         let translation = gesture.translation(in: nil)
-      
+        
         setupThumbImageViewAnimation(translation)
-
+        
         // rotation + conversion degrees to radians
         let degrees: CGFloat = translation.x / 20
         let angle = degrees * CGFloat.pi / 180
@@ -112,30 +112,20 @@ class ViewController: UIViewController {
     
     fileprivate func swipedLeft() {
         // Dislike
-        if currentPhotoIndex < photoIndexLimit {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1) {
                 self.cardView.center = CGPoint(x: self.cardView.frame.origin.x - self.cardView.frame.width/2, y: self.view.center.y + self.treshold)
                 self.thumbImageView.image = UIImage(systemName: "hand.thumbsup.fill")
                 self.thumbImageView.tintColor = .green
             }
             resetCard()
-        } else {
-            fetchPhotos()
-            currentPhotoIndex = 0
-        }
     }
     
     fileprivate func swipedRight() {
         // Like
-        if currentPhotoIndex < photoIndexLimit {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1) {
                 self.cardView.center = CGPoint(x: self.view.frame.maxX + self.view.frame.width/2, y: self.imageView.center.y + self.treshold)
             }
             resetCard()
-        }  else {
-            fetchPhotos()
-            currentPhotoIndex = 0
-        }
     }
     
     fileprivate func handleEndedState(_ gesture: UIPanGestureRecognizer) {
@@ -154,38 +144,38 @@ class ViewController: UIViewController {
     }
     
     fileprivate func resetCard() {
-        UIView.animate(withDuration: 0.5) {
-            self.currentPhotoIndex += 1
-            self.cardView.transform = .identity
-            self.cardView.center = self.view.center
-            self.thumbImageView.alpha = 0
-            self.downloadImage()
-        }
+                UIView.animate(withDuration: 0.5) {
+                    self.currentPhotoIndex += 1
+                    self.cardView.transform = .identity
+                    self.cardView.center = self.view.center
+                    self.thumbImageView.alpha = 0
+                    self.downloadImage()
+                }
     }
     
     // MARK: - Network Service
     
     fileprivate func fetchPhotos() {
-        
-        let unsplashAPIKey = "FrxT9u6XQRE_HVqjS9MhfYTH5LN0SsnhIp8VheooyRs"
-        let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=10&page=\(currentPage)"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else { return }
             
-            do {
-                let jsonResult = try JSONDecoder().decode([APIResponse].self, from: data)
-                DispatchQueue.main.async {
-                    self.results = jsonResult
-                    self.downloadImage()
+            let unsplashAPIKey = "z-vsuLtEoiR6XfrHUqG2G-VAf-TxvMNr3Hfms4OBsNo"
+            let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=2&page=\(currentPage)"
+            
+            guard let url = URL(string: urlString) else { return }
+            
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
+                guard let data = data else { return }
+                
+                do {
+                    let jsonResult = try JSONDecoder().decode([APIResponse].self, from: data)
+                    DispatchQueue.main.async {
+                        self.results = jsonResult
+                        self.downloadImage()
+                    }
+                } catch {
+                    print(error)
                 }
-            } catch {
-                print(error)
             }
-        }
-        task.resume()
+            task.resume()
     }
     
     fileprivate func downloadImage() {
@@ -194,6 +184,7 @@ class ViewController: UIViewController {
             currentPage += 1
             currentPhotoIndex = 0
             fetchPhotos()
+            
         } else {
             thumbImageView.alpha = 0
             let urlString = self.results[currentPhotoIndex].urls.regular
@@ -212,6 +203,4 @@ class ViewController: UIViewController {
             dataTask.resume()
         }
     }
-
-    
 }

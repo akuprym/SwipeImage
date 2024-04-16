@@ -21,9 +21,7 @@ class MainTabBarController: UITabBarController {
         let likedVC = self.createNav(with: "Liked", image: UIImage(systemName: "heart.fill"), vc: LikedViewController())
         
         self.setViewControllers([photosVC, likedVC], animated: true)
-        
-        let liked = (self.viewControllers?[1] as? UINavigationController)?.viewControllers.first as? LikedViewController
-        
+    
     }
     
     fileprivate func createNav(with title: String, image: UIImage?, vc: UIViewController) -> UINavigationController {
