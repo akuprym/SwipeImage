@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var currentPage = 1
     var currentPhotoIndex = 0
     let treshold: CGFloat = 75
-    let photoIndexLimit = 1
+    let photoIndexLimit = 9
     
     var cardView: UIView!
     var imageView: UIImageView!
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
     
     fileprivate func swipedRight() {
         // Like
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1) {
                 self.cardView.center = CGPoint(x: self.view.frame.maxX + self.view.frame.width/2, y: self.imageView.center.y + self.treshold)
             }
             resetCard()
@@ -157,8 +157,8 @@ class ViewController: UIViewController {
     
     fileprivate func fetchPhotos() {
             
-            let unsplashAPIKey = "z-vsuLtEoiR6XfrHUqG2G-VAf-TxvMNr3Hfms4OBsNo"
-            let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=2&page=\(currentPage)"
+            let unsplashAPIKey = "XD_pHSloSrtbhw2UlWNeDp1KxMRi049ou7fzeIlAYxE"
+            let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=10&page=\(currentPage)"
             
             guard let url = URL(string: urlString) else { return }
             
