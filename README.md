@@ -4,7 +4,7 @@ Users can swipe left (dislike) or swipe right (like) on images downloaded from t
 
 Functuanality: 
 - A bunch of random images are downloaded from the Unsplash API.
-- When the limit of photos per page is reached - 
+- When the limit of photos per page is reached - another page is uploaded.
 - Users can see one random image on the screen at a time.
 - Users are able to swipe left or swipe right on the image.
 
