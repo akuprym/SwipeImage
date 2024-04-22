@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		843509A92BC67D33000A4F1F /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843509A82BC67D33000A4F1F /* LikedViewController.swift */; };
 		846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846286A22B6862FA0071C8DE /* APIResponse.swift */; };
+		846F5DA42BD6DF91008F0828 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F5DA32BD6DF91008F0828 /* CardView.swift */; };
+		846F5DA72BD6DFC6008F0828 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 846F5DA62BD6DFC6008F0828 /* SDWebImage */; };
+		846F5DA92BD6DFC6008F0828 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 846F5DA82BD6DFC6008F0828 /* SDWebImageMapKit */; };
 		84DD54082BC95813002C4148 /* LikedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */; };
 		84E414752BC407F700F7F384 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E414742BC407F700F7F384 /* MainTabBarController.swift */; };
 		84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFA392B62F58B00A98AFD /* AppDelegate.swift */; };
@@ -22,6 +25,7 @@
 /* Begin PBXFileReference section */
 		843509A82BC67D33000A4F1F /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
 		846286A22B6862FA0071C8DE /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		846F5DA32BD6DF91008F0828 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCollectionViewCell.swift; sourceTree = "<group>"; };
 		84E414742BC407F700F7F384 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		84EBFA362B62F58B00A98AFD /* Tinder-like-SwipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder-like-SwipeApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846F5DA92BD6DFC6008F0828 /* SDWebImageMapKit in Frameworks */,
+				846F5DA72BD6DFC6008F0828 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				84DD54072BC95813002C4148 /* LikedCollectionViewCell.swift */,
+				846F5DA32BD6DF91008F0828 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +134,10 @@
 			dependencies = (
 			);
 			name = "Tinder-like-SwipeApp";
+			packageProductDependencies = (
+				846F5DA62BD6DFC6008F0828 /* SDWebImage */,
+				846F5DA82BD6DFC6008F0828 /* SDWebImageMapKit */,
+			);
 			productName = "Tinder-like-SwipeApp";
 			productReference = 84EBFA362B62F58B00A98AFD /* Tinder-like-SwipeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 84EBFA2D2B62F58B00A98AFD;
+			packageReferences = (
+				846F5DA52BD6DFC6008F0828 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 84EBFA372B62F58B00A98AFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,6 +202,7 @@
 				84EBFA3A2B62F58B00A98AFD /* AppDelegate.swift in Sources */,
 				84E414752BC407F700F7F384 /* MainTabBarController.swift in Sources */,
 				84EBFA3C2B62F58B00A98AFD /* SceneDelegate.swift in Sources */,
+				846F5DA42BD6DF91008F0828 /* CardView.swift in Sources */,
 				846286A32B6862FA0071C8DE /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +421,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		846F5DA52BD6DFC6008F0828 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		846F5DA62BD6DFC6008F0828 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 846F5DA52BD6DFC6008F0828 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		846F5DA82BD6DFC6008F0828 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 846F5DA52BD6DFC6008F0828 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84EBFA2E2B62F58B00A98AFD /* Project object */;
 }
