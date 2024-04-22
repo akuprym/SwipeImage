@@ -68,7 +68,7 @@ class CardView: UIView {
     
     fileprivate func setupThumbImageViewAnimation(_ translation: CGPoint) {
         
-        let xFromCenter = self.center.x - self.center.x
+        let xFromCenter = imageView.center.x - self.center.x
         
         self.center = CGPoint(x: self.center.x + translation.x, y: self.center.y + translation.y)
         
@@ -105,7 +105,7 @@ class CardView: UIView {
                 self.thumbImageView.tintColor = .green
             }
 //        self.removeFromSuperview()
-            resetCard()
+//            resetCard()
     }
     
     fileprivate func swipedRight() {
@@ -114,7 +114,7 @@ class CardView: UIView {
                 self.center = CGPoint(x: self.frame.maxX + self.frame.width/2, y: self.imageView.center.y + self.treshold)
             }
 //        self.removeFromSuperview()
-            resetCard()
+//            resetCard()
     }
     
     fileprivate func handleEndedState(_ gesture: UIPanGestureRecognizer) {

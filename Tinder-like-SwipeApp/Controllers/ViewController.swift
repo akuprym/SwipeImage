@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     fileprivate func fetchPhotos() {
         
         let unsplashAPIKey = "H5-2v_xzHIa1VFAeuBUJwN6UE2iWijn3V5cZTGD_GJU"
-        let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=10&page=\(currentPage)"
+        let urlString = "https://api.unsplash.com/photos/random?client_id=\(unsplashAPIKey)&count=2&page=\(currentPage)"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -56,9 +56,9 @@ class ViewController: UIViewController {
     fileprivate func downloadImage() {
         var swipe = 0
     
-        for index in 0...9 {
+        for index in 0...1 {
             swipe += 1
-            if swipe > 9 && currentPage < 3 {
+            if swipe > 9 && currentPage < 4 {
                 currentPage += 1
                 fetchPhotos()
             } else {
