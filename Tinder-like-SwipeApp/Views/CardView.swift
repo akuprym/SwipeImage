@@ -14,7 +14,7 @@ class CardView: UIView {
     let treshold: CGFloat = 75
     let photoIndexLimit = 9
     
-    var imageView = UIImageView()
+    var imageView = UIImageView(image: UIImage(named: "1"))
     var thumbImageView = UIImageView()
     
     override init(frame: CGRect) {
