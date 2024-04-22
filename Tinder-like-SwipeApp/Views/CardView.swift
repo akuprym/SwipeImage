@@ -2,7 +2,7 @@
 //  CardView.swift
 //  Tinder-like-SwipeApp
 //
-//  Created by admin on 21.04.24.
+//  Created by admin on 22.04.24.
 //
 
 import UIKit
